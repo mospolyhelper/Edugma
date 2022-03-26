@@ -1,0 +1,19 @@
+{
+    "version": 0,
+    "id": "0",
+    "name": "Московский политехнический университет",
+    "image": "https://mospolytech.ru/local/templates/main/dist/img/logos/mospolytech-logo-white.png",
+    "api": {
+        "urls": {
+            "schedule": "https://mph-schedule.herokuapp.com/",
+            "account": "https://mph-account.herokuapp.com/"
+        },
+        "endpoints": {
+            "/schedule/sources/{type}": "${schedule}/schedule/sources/",
+            "/schedule/sources": "${schedule}/schedule/sources",
+            "/schedules/{type}/{key}": "${schedule}/schedules/",
+            "/lessons/review/{type}/{key}": "${schedule}/lessons/review/",
+            "/schedule/free-place": "${schedule}/schedule/free-place"
+        }
+    }
+}
