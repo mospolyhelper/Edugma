@@ -1,19 +1,124 @@
 {
-    "version": 0,
-    "id": "0",
     "name": "Московский политехнический университет",
     "image": "https://mospolytech.ru/local/templates/main/dist/img/logos/mospolytech-logo-white.png",
-    "api": {
-        "urls": {
-            "schedule": "https://mph-schedule.herokuapp.com/",
-            "account": "https://mph-account.herokuapp.com/"
+    "variables": {
+        "baseUrl": "https://devspare.mospolytech.ru"
+    },
+    "endpoints": {
+        "schedule-compact-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedules/compact/{type}/{key}",
+            "security": false
         },
-        "endpoints": {
-            "/schedule/sources/{type}": "${schedule}/schedule/sources/",
-            "/schedule/sources": "${schedule}/schedule/sources",
-            "/schedules/{type}/{key}": "${schedule}/schedules/",
-            "/lessons/review/{type}/{key}": "${schedule}/lessons/review/",
-            "/schedule/free-place": "${schedule}/schedule/free-place"
+        "schedule-compact-complex-post": {
+            "method": "post",
+            "url": "{baseUrl}/schedules/compact/complex",
+            "security": false
+        },
+        "schedule-sources-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/sources/{type}",
+            "queryParams": {
+                "query": "{query}",
+                "page": "{page}",
+                "limit": "{limit}"
+            },
+            "security": false
+        },
+        "schedule-sources-types-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/sources",
+            "security": false
+        },
+        "schedule-info-group-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/group/{id}",
+            "security": false
+        },
+        "schedule-info-teacher-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/teacher/{id}",
+            "security": false
+        },
+        "schedule-info-place-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/place/{id}",
+            "security": false
+        },
+        "schedule-info-subject-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/subject/{id}",
+            "security": false
+        },
+        "schedule-info-lesson-type-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/lesson-type/{id}",
+            "security": false
+        },
+        "schedule-places-free-post": {
+            "method": "post",
+            "url": "{baseUrl}/schedule/places/free",
+            "security": false
+        },
+        "schedule-places-occupancy-get": {
+            "method": "get",
+            "url": "{baseUrl}/schedule/places/occupancy/{placeId}",
+            "security": false
+        },
+        "account-login-post": {
+            "method": "post",
+            "url": "{baseUrl}/login",
+            "security": false
+        },
+        "account-lk-token-get": {
+            "method": "get",
+            "url": "{baseUrl}/getLkToken",
+            "security": true
+        },
+        "account-peoples-classmates-get": {
+            "method": "get",
+            "url": "{baseUrl}/peoples/classmates",
+            "security": true
+        },
+        "account-peoples-students-get": {
+            "method": "get",
+            "url": "{baseUrl}/peoples/students",
+            "queryParams": {
+                "query": "{query}",
+                "page": "{page}",
+                "limit": "{limit}"
+            },
+            "security": true
+        },
+        "account-peoples-teachers-get": {
+            "method": "get",
+            "url": "{baseUrl}/peoples/teachers",
+            "queryParams": {
+                "query": "{query}",
+                "page": "{page}",
+                "limit": "{limit}"
+            },
+            "security": true
+        },
+        "account-applications-get": {
+            "method": "get",
+            "url": "{baseUrl}/applications",
+            "security": true
+        },
+        "account-performance-get": {
+            "method": "get",
+            "url": "{baseUrl}/performance/{periodId}",
+            "security": true
+        },
+        "account-personal-get": {
+            "method": "get",
+            "url": "{baseUrl}/personal",
+            "security": true
+        },
+        "account-payments-get": {
+            "method": "get",
+            "url": "{baseUrl}/payments/{contractId}",
+            "security": true
         }
     }
 }
