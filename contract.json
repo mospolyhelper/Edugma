@@ -67,8 +67,13 @@
         },
         "account-login-post": {
             "method": "post",
-            "url": "{baseUrl}/login",
+            "url": "{baseUrl}/auth/login",
             "security": false
+        },
+        "account-accounts-get": {
+            "method": "post",
+            "url": "{baseUrl}/auth/accounts",
+            "security": true
         },
         "account-lk-token-get": {
             "method": "get",
